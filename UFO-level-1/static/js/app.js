@@ -69,8 +69,7 @@ function runEnter(){
    
     } else if(inputValueCity !=""){
         tableData=tableData.filter(report => report.city === inputValueCity);
-        if ( inputValueDate !=""){
-            tableData= tableData.filter(report => report.datetime === inputValueDate);}
+        
         if(inputElementState !=""){
                 tabledata=tableData.filter(report => report.state=== inputValueState );
         
@@ -95,12 +94,6 @@ function runEnter(){
    
     } else if(inputValueState !=""){
         tableData=tableData.filter(report => report.state === inputValueState);
-        if ( inputValueDate !=""){
-            tableData= tableData.filter(report => report.datetime === inputValueDate);}
-        if(inputElementCity !=""){
-                tabledata=tableData.filter(report => report.city=== inputValueCity );
-        
-            }
         if (inputValueCountry != ""){
                 tableData=tableData.filter(report => report.country === inputValueCountry);
             }
@@ -121,15 +114,6 @@ function runEnter(){
    
     } else if(inputValueCountry !=""){
         tableData=tableData.filter(report => report.country === inputValueCountry);
-        if ( inputValueDate !=""){
-            tableData= tableData.filter(report => report.datetime === inputValueDate);}
-        if(inputElementState !=""){
-                tabledata=tableData.filter(report => report.state=== inputValueState );
-        
-            }
-        if (inputValueCity != ""){
-                tableData=tableData.filter(report => report.city === inputValueCity);
-            }
         if (inputValueShape != ""){
                 tableData=tableData.filter(report => report.shape === inputValueShape);
             }
@@ -147,20 +131,8 @@ function runEnter(){
    
     } else if(inputValueShape !=""){
         tableData=tableData.filter(report => report.shape === inputValueShape);
-        if ( inputValueDate !=""){
-            tableData= tableData.filter(report => report.datetime === inputValueDate);}
-        if(inputElementState !=""){
-                tabledata=tableData.filter(report => report.state=== inputValueState );
         
-            }
-        if (inputValueCountry != ""){
-                tableData=tableData.filter(report => report.country === inputValueCountry);
-            }
-        if (inputValueCity != ""){
-                tableData=tableData.filter(report => report.city === inputValueCity);
-            }
-       
-       tbody.html("");
+        tbody.html("");
     tableData.forEach((filteredReport) =>{
         var row=tbody.append("tr");
         Object.entries(filteredReport).forEach(([key,value])=> {
