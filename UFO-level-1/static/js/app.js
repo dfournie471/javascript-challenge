@@ -20,15 +20,20 @@ form.on("submit", runEnter);
 
 function runEnter(){
     d3.event.preventDefault();
-    var inputElement= d3.select("#datetime");
+    var inputElementDate= d3.select("#datetime");
+    var inputElementCity=d3.select("#city");
     
 
-    var inputValue=inputElement.property("value");
+    var inputValueDate=inputElementDate.property("value");
+    var inputValueCity= inputElementCity.property("value");
 
-    var filteredData= tableData.filter(report => report.datetime === inputValue);
+    var filteredDataDate= tableData.filter(report => report.datetime === inputValueDate);
+    console.log(inputValueDate);
+    console.log(inputValueCity);
+    console.log(filteredData);
     
     tbody.html("");
-    filteredData.forEach((filteredReport) =>{
+    filteredDataDate.forEach((filteredReport) =>{
         var row=tbody.append("tr");
         Object.entries(filteredReport).forEach(([key,value])=> {
             var cell=row.append("td");
@@ -36,6 +41,7 @@ function runEnter(){
 
         });
     });
+    var filteredDataCity=tableData.filter(report => report.city === inputValueCity);
 
 
 }
