@@ -21,13 +21,11 @@ tableData.forEach((alienReport) => {
 });
 
 //reference classes for listener events
-var button =d3.select("#filter-btn");
-// var form =d3.select("form");
+var button =d3.selectAll(".form-control");
 var resetButton=d3.select("#reset-btn");
 
 
 //create listener events
-// form.on("submit", runEnter);
 button.on("click", runEnter);
 resetButton.on("click", runReset);
 
