@@ -21,7 +21,7 @@ tableData.forEach((alienReport) => {
 });
 
 //reference classes for listener events
-var button =d3.select(".filter-btn");
+var button =d3.select("#filter-btn");
 var resetButton=d3.select("#reset-btn");
 
 
